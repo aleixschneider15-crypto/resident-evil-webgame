@@ -19,7 +19,9 @@
     </div>
   </div>
 
-    <div id="gameScreen" class="hidden">
+   <!-- ... contenido anterior ... -->
+
+<div id="gameScreen" class="hidden">
   <div id="hud">
     <div id="healthBar">Salud: ████████</div>
     <div id="zoneLabel">Zona segura</div>
@@ -40,7 +42,15 @@
     <button onclick="saveGame(2)">Guardar en Slot 2 🖨️</button>
     <button onclick="saveGame(3)">Guardar en Slot 3 🖨️</button>
   </div>
+</div> <!-- ✅ Este es el cierre correcto -->
+
+<!-- ❌ El siguiente cierre estaba de más -->
+<!-- </div> ← Elimina este -->
+
+<div id="creditsScreen" class="hidden">
+  <!-- ... créditos ... -->
 </div>
+
   
   </div>
 
