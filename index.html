@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resident Evil Webgame</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="startScreen">
+    <img src="assets/background_re2.jpg" id="background" />
+    <div id="menu">
+      <button onclick="startGame()">
+        <img src="assets/compass_icon.png" alt="Brújula" />
+        COMENZAR PARTIDA
+      </button>
+      <button onclick="loadGameMenu()">CARGAR PARTIDA</button>
+      <button onclick="showCredits()">CRÉDITOS</button>
+    </div>
+  </div>
+
+  <div id="gameScreen" class="hidden">
+    <!-- Aquí irá el HUD, mapa, zona segura, etc. -->
+  </div>
+
+  <div id="creditsScreen" class="hidden">
+    <div id="creditsContent">
+      <h2>Créditos</h2>
+      <ul>
+        <li>Diseño y dirección: Aleix</li>
+        <li>Programación: Aleix + Copilot</li>
+        <li>Inspirado en: Resident Evil 2 / RE4 Remake</li>
+        <li>Sonido y ambientación: RE Legacy Pack</li>
+        <li>Motor: JavaScript + Three.js</li>
+      </ul>
+    </div>
+    <div id="thankYouMessage" class="hidden"></div>
+    <div id="endOptions" class="hidden">
+      <button onclick="returnToMenu()">Volver al menú</button>
+      <button onclick="restartGame()">Reiniciar partida</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
