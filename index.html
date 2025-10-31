@@ -19,8 +19,29 @@
     </div>
   </div>
 
-  <div id="gameScreen" class="hidden">
-    <!-- Aquí irá el HUD, mapa, zona segura, etc. -->
+    <div id="gameScreen" class="hidden">
+  <div id="hud">
+    <div id="healthBar">Salud: ████████</div>
+    <div id="zoneLabel">Zona segura</div>
+  </div>
+
+  <div id="mapContainer">
+    <h3>Mapa táctico</h3>
+    <div id="miniMap">
+      <p>🧭 Jugador</p>
+      <p>📍 Objetivo</p>
+    </div>
+  </div>
+
+  <div id="safeZone">
+    <h2>Zona segura</h2>
+    <p>La música ambiental suena suavemente. Puedes guardar tu progreso aquí.</p>
+    <button onclick="saveGame(1)">Guardar en Slot 1 🖨️</button>
+    <button onclick="saveGame(2)">Guardar en Slot 2 🖨️</button>
+    <button onclick="saveGame(3)">Guardar en Slot 3 🖨️</button>
+  </div>
+</div>
+  
   </div>
 
   <div id="creditsScreen" class="hidden">
