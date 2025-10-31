@@ -58,3 +58,32 @@ function saveGame(slotNumber) {
 function loadGameMenu() {
   alert('Aquí iría el menú de carga con los slots disponibles.');
 }
+import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.155.0/examples/jsm/loaders/GLTFLoader.js';
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.getElementById('threeContainer').appendChild(renderer.domElement);
+
+// Luz
+const light = new THREE.HemisphereLight(0xffffff, 0x444444);
+scene.add(light);
+
+// Cargar modelo
+const loader = new GLTFLoader();
+loader.load('assets/models/personaje.glb', function(gltf) {
+  scene.add(gltf.scene);
+}, undefined, function(error) {
+  console.error('Error al cargar el modelo:', error);
+});
+
+// Posición de cámara
+camera.position.z = 5;
+
+// Animación
+function animate() {
+  requestAnimationFrame(animate);
+  renderer.render(scene, camera);
+}
+animate();
